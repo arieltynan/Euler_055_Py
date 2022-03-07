@@ -25,7 +25,7 @@ total = 0 #count of Lychrel numbers
 for i in range(1,10000):
     sum = i
     count = 0 #number of reverse adds
-    while pal_Check(sum) == False and count < 51: #After 49, number is deemed Lychrel
+    while (pal_Check(sum) == False or count == 0) and count < 51: #After 49, number is deemed Lychrel
         sum = sum + rev_num(sum)
         #print(sum)
         count = count + 1
