@@ -1,6 +1,6 @@
 #Ariel Tynan
 #Euler Problem 055, Lychrel numbers, solved in Python
-#Started 7 March 2022
+#Started and solved 7 March 2022
 
 #Reverses integer
 def rev_num(n): 
@@ -22,14 +22,13 @@ def pal_Check(n):
     return pal
 
 total = 0 #count of Lychrel numbers
-for i in range(1,10000):
+for i in range(1,10000): #all numbers under 10000
     sum = i
     count = 0 #number of reverse adds
     while (pal_Check(sum) == False or count == 0) and count < 51: #After 49, number is deemed Lychrel
-        sum = sum + rev_num(sum)
-        #print(sum)
+        sum = sum + rev_num(sum) #adds reverse to current
         count = count + 1
-    if count == 51 and pal_Check(sum) == False:
+    if count == 51 and pal_Check(sum) == False: 
         total = total + 1
-        print(i)
+        #print(i) 
 print(total)
